@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>icedxcoffee — Shows</title>
+<meta name="description" content="Upcoming live shows from icedxcoffee across the Midwest — West Plains, Kansas City, St. Louis, Chicago.">
+<meta name="keywords" content="icedxcoffee, midwest laptop music, 1brew, indie music, midwest emo, bedroom pop, DIY music">
+<meta name="author" content="icedxcoffee">
+<meta property="og:title" content="icedxcoffee — Shows">
+<meta property="og:description" content="Catch icedxcoffee live. Upcoming shows in MO and IL.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="icedxcoffee — Shows">
+<meta name="twitter:description" content="Catch icedxcoffee live. Upcoming shows in MO and IL.">
+<link rel="canonical" href="https://icedxcoffee.com/shows.html">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Top bar ── */
+  .top-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 52px;
+    background: #000;
+    border-bottom: 1px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 clamp(20px, 5vw, 60px);
+    z-index: 100;
+  }
+
+  .back-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .back-link:hover { opacity: 1; }
+  .back-link svg { width: 14px; height: 14px; }
+
+  .site-name {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: none;
+    opacity: 0.35;
+  }
+
+  /* ── Main content ── */
+  .content {
+    margin-top: 52px;
+    flex: 1;
+    padding: clamp(40px, 8vw, 80px) clamp(20px, 8vw, 120px) 140px;
+    max-width: 860px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    font-size: clamp(22px, 4vw, 36px);
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .rule {
+    width: 40px;
+    height: 1px;
+    background: rgba(255,255,255,0.25);
+    margin-bottom: 44px;
+  }
+
+  /* ── Show list ── */
+  .shows {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .show-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.8;
+    transition: opacity 0.2s, padding-left 0.2s;
+  }
+  .show-row:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+  .show-row:hover { opacity: 1; padding-left: 8px; }
+
+  .show-date {
+    font-size: clamp(11px, 1.4vw, 13px);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+
+  .show-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(255,255,255,0.15);
+    flex-shrink: 0;
+  }
+
+  .show-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+
+  .show-venue {
+    font-size: clamp(13px, 1.8vw, 16px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .show-location {
+    font-size: clamp(10px, 1.2vw, 12px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.4;
+  }
+
+  .show-arrow {
+    opacity: 0.25;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+  .show-row:hover .show-arrow { opacity: 0.6; }
+
+  /* ── Ticker ── */
+  .ticker-wrap {
+    position: fixed;
+    bottom: 84px;
+    left: 0;
+    right: 0;
+    background: #000;
+    overflow: hidden;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    z-index: 9;
+    border-top: 1px solid #111;
+  }
+
+  .ticker-track {
+    display: flex;
+    white-space: nowrap;
+    animation: ticker 18s linear infinite;
+  }
+
+  .ticker-item {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 3px 10px;
+    margin-right: 60px;
+    flex-shrink: 0;
+  }
+
+  @keyframes ticker {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ── Bottom bar ── */
+  .bottom-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 84px;
+    background: #000;
+    border-top: 1px solid #111;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: clamp(36px, 6vw, 96px);
+    gap: clamp(28px, 4vw, 56px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    z-index: 10;
+  }
+
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: clamp(30px, 3.5vw, 42px);
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+    transition: opacity 0.2s, color 0.2s;
+    white-space: nowrap;
+    position: relative;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: #fff;
+    transition: width 0.25s ease;
+  }
+  .nav-link:hover { opacity: 1; }
+  .nav-link:hover::after { width: 100%; }
+  .nav-link.active { opacity: 1; }
+  .nav-link.active::after { width: 100%; }
+
+  .ig-link {
+    display: flex;
+    align-items: center;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .ig-link:hover { opacity: 1; }
+  .ig-link svg {
+    width: clamp(28px, 3vw, 38px);
+    height: clamp(28px, 3vw, 38px);
+  }
+
+  @media (max-width: 600px) {
+    .show-row { gap: 14px; }
+    .show-divider { display: none; }
+    .show-date { min-width: 60px; }
+  }
+
+  @media (max-width: 480px) {
+    .content { padding: 32px 20px 80px; }
+    .top-bar { padding: 0 20px; }
+  }
+
+  /* ── Mobile nav overlay ── */
+  .hamburger {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 200;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0;
+  }
+  .hamburger span {
+    display: block;
+    width: 26px;
+    height: 1.5px;
+    background: #fff;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 150;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 60px clamp(32px, 10vw, 80px);
+  }
+  .nav-overlay.open { display: flex; }
+  .nav-overlay a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-size: clamp(36px, 12vw, 64px);
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    width: 100%;
+    transition: opacity 0.2s;
+  }
+  .nav-overlay a:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+  .nav-overlay a:hover, .nav-overlay a.active { opacity: 1; }
+  .nav-overlay .overlay-ig {
+    margin-top: 36px;
+    opacity: 0.5;
+    border: none !important;
+    width: auto !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+  }
+  .nav-overlay .overlay-ig svg { width: 20px; height: 20px; }
+  @media (max-width: 680px) {
+    .bottom-bar { display: none; }
+    .ticker-wrap { bottom: 0; }
+    .hamburger { display: flex; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="icedxcoffee.html" class="back-link">
+    <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 2L4 7l5 5"/>
+    </svg>
+    Back
+  </a>
+  <span class="site-name">icedxcoffee</span>
+</div>
+
+<div class="content">
+  <h1>Shows</h1>
+  <div class="rule"></div>
+
+  <div class="shows">
+
+    <a href="https://www.bandsintown.com/a/15633483-icedxcoffee?came_from=257&utm_medium=web&utm_source=home&utm_campaign=search_bar&noindex=1" target="_blank" class="show-row">
+      <span class="show-date">Mar 14</span>
+      <div class="show-divider"></div>
+      <div class="show-info">
+        <span class="show-venue">Yellow House Community Arts</span>
+        <span class="show-location">West Plains, MO</span>
+      </div>
+      <svg class="show-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+        <path d="M3 8h10M9 4l4 4-4 4"/>
+      </svg>
+    </a>
+
+    <a href="https://www.bandsintown.com/a/15633483-icedxcoffee?came_from=257&utm_medium=web&utm_source=home&utm_campaign=search_bar&noindex=1" target="_blank" class="show-row">
+      <span class="show-date">Mar 28</span>
+      <div class="show-divider"></div>
+      <div class="show-info">
+        <span class="show-venue">Dragon's Den DIY</span>
+        <span class="show-location">Kansas City, MO</span>
+      </div>
+      <svg class="show-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+        <path d="M3 8h10M9 4l4 4-4 4"/>
+      </svg>
+    </a>
+
+    <a href="https://www.bandsintown.com/a/15633483-icedxcoffee?came_from=257&utm_medium=web&utm_source=home&utm_campaign=search_bar&noindex=1" target="_blank" class="show-row">
+      <span class="show-date">Apr 04</span>
+      <div class="show-divider"></div>
+      <div class="show-info">
+        <span class="show-venue">The Sinkhole</span>
+        <span class="show-location">St. Louis, MO</span>
+      </div>
+      <svg class="show-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+        <path d="M3 8h10M9 4l4 4-4 4"/>
+      </svg>
+    </a>
+
+    <a href="https://www.bandsintown.com/a/15633483-icedxcoffee?came_from=257&utm_medium=web&utm_source=home&utm_campaign=search_bar&noindex=1" target="_blank" class="show-row">
+      <span class="show-date">Apr 12</span>
+      <div class="show-divider"></div>
+      <div class="show-info">
+        <span class="show-venue">Burlington Bar</span>
+        <span class="show-location">Chicago, IL</span>
+      </div>
+      <svg class="show-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+        <path d="M3 8h10M9 4l4 4-4 4"/>
+      </svg>
+    </a>
+
+  </div>
+</div>
+
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item">Midwest Laptop Music Records</span>
+    <span class="ticker-item">Midwest Laptop Music Records</span>
+    <span class="ticker-item">Midwest Laptop Music Records</span>
+    <span class="ticker-item">Midwest Laptop Music Records</span>
+    <span class="ticker-item">Midwest Laptop Music Records</span>
+    <span class="ticker-item">Midwest Laptop Music Records</span>
+    <span class="ticker-item">Midwest Laptop Music Records</span>
+    <span class="ticker-item">Midwest Laptop Music Records</span>
+    <span class="ticker-item">Midwest Laptop Music Records</span>
+    <span class="ticker-item">Midwest Laptop Music Records</span>
+    <span class="ticker-item">Midwest Laptop Music Records</span>
+    <span class="ticker-item">Midwest Laptop Music Records</span>
+  </div>
+</div>
+
+<div class="bottom-bar">
+  <a href="music.html" class="nav-link">Music</a>
+  <a href="https://thethreadscollab.com/collections/icedxcoffee-all-products" target="_blank" class="nav-link">Merch</a>
+  <a href="media.html" class="nav-link">Media</a>
+  <a href="shows.html" class="nav-link active">Shows</a>
+  <a href="https://www.instagram.com/icedxcoffee_band_official/" target="_blank" class="ig-link" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="0.8" fill="#fff" stroke="none"/>
+    </svg>
+  </a>
+</div>
+
+
+<button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleNav()">
+  <span></span><span></span><span></span>
+</button>
+<div class="nav-overlay" id="navOverlay">
+  <a href="music.html">Music</a>
+  <a href="https://thethreadscollab.com/collections/icedxcoffee-all-products" target="_blank">Merch</a>
+  <a href="media.html">Media</a>
+  <a href="shows.html" class="active">Shows</a>
+  <a href="https://www.instagram.com/icedxcoffee_band_official/" target="_blank" class="overlay-ig">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <circle cx="12" cy="12" r="4"/>
+      <circle cx="17.5" cy="6.5" r="0.8" fill="#fff" stroke="none"/>
+    </svg>
+    Instagram
+  </a>
+</div>
+<script>
+  function toggleNav() {
+    document.getElementById('hamburger').classList.toggle('open');
+    document.getElementById('navOverlay').classList.toggle('open');
+    document.body.style.overflow = document.getElementById('navOverlay').classList.contains('open') ? 'hidden' : '';
+  }
+</script>
+</body>
+</html>
