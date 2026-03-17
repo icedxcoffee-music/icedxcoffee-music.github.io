@@ -1,458 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>icedxcoffee — Music</title>
-<meta name="description" content="Stream 1brew by icedxcoffee on Spotify, Apple Music, Tidal, and more.">
-<meta name="keywords" content="icedxcoffee, midwest laptop music, 1brew, indie music, midwest emo, bedroom pop, DIY music">
-<meta name="author" content="icedxcoffee">
-<meta property="og:title" content="icedxcoffee — Music">
-<meta property="og:description" content="Stream 1brew by icedxcoffee on all platforms.">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="icedxcoffee — Music">
-<meta name="twitter:description" content="Stream 1brew by icedxcoffee on all platforms.">
-<link rel="canonical" href="https://icedxcoffee.com/music.html">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>icedxcoffee — Music</title>
+    <meta name="description" content="Stream 1brew by icedxcoffee on Spotify, Apple Music, Tidal, and more.">
+    <meta name="keywords" content="icedxcoffee, midwest laptop music, 1brew, indie music, midwest emo, bedroom pop, DIY music">
+    <meta name="author" content="icedxcoffee">
+    <meta property="og:title" content="icedxcoffee — Music">
+    <meta property="og:description" content="Stream 1brew by icedxcoffee on all platforms.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="icedxcoffee — Music">
+    <meta name="twitter:description" content="Stream 1brew by icedxcoffee on all platforms.">
+    <link rel="canonical" href="https://icedxcoffee.com/music.html">
+    
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  body {
-    background: #000;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
+      body {
+        background: #000;
+        color: #fff;
+        font-family: 'Arial', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
 
-  .top-bar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: 52px;
-    background: #000;
-    border-bottom: 1px solid #1a1a1a;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 clamp(20px, 5vw, 60px);
-    z-index: 100;
-  }
+      .top-bar {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        height: 52px;
+        background: #000;
+        border-bottom: 1px solid #1a1a1a;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 clamp(20px, 5vw, 60px);
+        z-index: 100;
+      }
 
-  .back-link {
-    color: #fff;
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    opacity: 0.6;
-    transition: opacity 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .back-link:hover { opacity: 1; }
-  .back-link svg { width: 14px; height: 14px; }
+      .back-link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .back-link:hover { opacity: 1; }
+      .back-link svg { width: 14px; height: 14px; }
 
-  .site-name {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: none;
-    opacity: 0.35;
-  }
+      .site-name {
+        font-size: 11px;
+        letter-spacing: 3px;
+        text-transform: none;
+        opacity: 0.35;
+      }
 
-  .content {
-    margin-top: 52px;
-    flex: 1;
-    padding: clamp(40px, 8vw, 80px) clamp(20px, 8vw, 120px) 100px;
-    max-width: 720px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+      .content {
+        margin-top: 52px;
+        flex: 1;
+        padding: clamp(40px, 8vw, 80px) clamp(20px, 8vw, 120px) 100px;
+        max-width: 720px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-  h1 {
-    font-size: clamp(22px, 4vw, 36px);
-    font-weight: 400;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
+      h1 {
+        font-size: clamp(22px, 4vw, 36px);
+        font-weight: 400;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
 
-  .rule {
-    width: 40px;
-    height: 1px;
-    background: rgba(255,255,255,0.25);
-    margin-bottom: 44px;
-  }
+      .rule {
+        width: 40px;
+        height: 1px;
+        background: rgba(255,255,255,0.25);
+        margin-bottom: 44px;
+      }
 
-  /* ── Platform list ── */
-  .platforms {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
+      /* ── Platform list ── */
+      .platforms {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
 
-  .platform-link {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 22px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    text-decoration: none;
-    color: #fff;
-    opacity: 0.8;
-    transition: opacity 0.2s, padding-left 0.2s;
-  }
-  .platform-link:first-child {
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .platform-link:hover {
-    opacity: 1;
-    padding-left: 8px;
-  }
+      .platform-link {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 22px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        text-decoration: none;
+        color: #fff;
+        opacity: 0.8;
+        transition: opacity 0.2s, padding-left 0.2s;
+      }
+      .platform-link:first-child {
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+      .platform-link:hover {
+        opacity: 1;
+        padding-left: 8px;
+      }
 
-  .platform-icon {
-    width: 36px;
-    height: 36px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .platform-icon svg {
-    width: 28px;
-    height: 28px;
-  }
+      .platform-icon {
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .platform-icon svg {
+        width: 28px;
+        height: 28px;
+      }
 
-  .platform-name {
-    font-size: clamp(14px, 2vw, 18px);
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    font-weight: 400;
-    flex: 1;
-  }
+      .platform-name {
+        font-size: clamp(14px, 2vw, 18px);
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        font-weight: 400;
+        flex: 1;
+      }
 
-  .arrow {
-    opacity: 0.3;
-    flex-shrink: 0;
-  }
-  .platform-link:hover .arrow { opacity: 0.7; }
+      .arrow {
+        opacity: 0.3;
+        flex-shrink: 0;
+      }
+      .platform-link:hover .arrow { opacity: 0.7; }
 
-  /* ── Bottom bar ── */
-  .bottom-bar {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    height: 84px;
-    background: #000;
-    border-top: 1px solid #111;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: clamp(36px, 6vw, 96px);
-    gap: clamp(28px, 4vw, 56px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
+      /* ── Bottom bar ── */
+      .bottom-bar {
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        height: 84px;
+        background: #000;
+        border-top: 1px solid #111;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: clamp(36px, 6vw, 96px);
+        gap: clamp(28px, 4vw, 56px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
 
-  .nav-link {
-    color: #fff;
-    text-decoration: none;
-    font-size: clamp(30px, 3.5vw, 42px);
-    font-family: 'Arial', sans-serif;
-    font-weight: 400;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    opacity: 0.9;
-    transition: opacity 0.2s, color 0.2s;
-    white-space: nowrap;
-    position: relative;
-  }
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 1.5px;
-    background: #fff;
-    transition: width 0.25s ease;
-  }
-  .nav-link:hover { opacity: 1; }
-  .nav-link:hover::after { width: 100%; }
-  .nav-link.active { opacity: 1; }
-  .nav-link.active::after { width: 100%; }
+      .nav-link {
+        color: #fff;
+        text-decoration: none;
+        font-size: clamp(30px, 3.5vw, 42px);
+        font-family: 'Arial', sans-serif;
+        font-weight: 400;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.9;
+        transition: opacity 0.2s, color 0.2s;
+        white-space: nowrap;
+        position: relative;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 1.5px;
+        background: #fff;
+        transition: width 0.25s ease;
+      }
+      .nav-link:hover { opacity: 1; }
+      .nav-link:hover::after { width: 100%; }
+      .nav-link.active { opacity: 1; }
+      .nav-link.active::after { width: 100%; }
 
-  .ig-link {
-    display: flex;
-    align-items: center;
-    opacity: 0.9;
-    transition: opacity 0.2s;
-    text-decoration: none;
-    flex-shrink: 0;
-  }
-  .ig-link:hover { opacity: 1; }
-  .ig-link svg {
-    width: clamp(28px, 3vw, 38px);
-    height: clamp(28px, 3vw, 38px);
-  }
+      .ig-link {
+        display: flex;
+        align-items: center;
+        opacity: 0.9;
+        transition: opacity 0.2s;
+        text-decoration: none;
+        flex-shrink: 0;
+      }
+      .ig-link:hover { opacity: 1; }
+      .ig-link svg {
+        width: clamp(28px, 3vw, 38px);
+        height: clamp(28px, 3vw, 38px);
+      }
 
-  @media (max-width: 480px) {
-    .content { padding: 32px 20px 100px; }
-    .top-bar { padding: 0 20px; }
-    .platform-link { padding: 18px 0; gap: 16px; }
-    .platform-icon svg { width: 24px; height: 24px; }
-  }
+      @media (max-width: 480px) {
+        .content { padding: 32px 20px 100px; }
+        .top-bar { padding: 0 20px; }
+        .platform-link { padding: 18px 0; gap: 16px; }
+        .platform-icon svg { width: 24px; height: 24px; }
+      }
 
-  /* ── Ticker ── */
-  .ticker-wrap {
-    position: fixed;
-    bottom: 84px;
-    left: 0;
-    right: 0;
-    background: #000;
-    overflow: hidden;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    z-index: 9;
-    border-top: 1px solid #111;
-  }
+      /* ── Ticker ── */
+      .ticker-wrap {
+        position: fixed;
+        bottom: 84px;
+        left: 0;
+        right: 0;
+        background: #000;
+        overflow: hidden;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        z-index: 9;
+        border-top: 1px solid #111;
+      }
 
-  .ticker-track {
-    display: flex;
-    white-space: nowrap;
-    animation: ticker 18s linear infinite;
-  }
+      .ticker-track {
+        display: flex;
+        white-space: nowrap;
+        animation: ticker 18s linear infinite;
+      }
 
-  .ticker-item {
-    font-family: 'Arial', sans-serif;
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #fff;
-    padding: 3px 10px;
-    margin-right: 60px;
-    flex-shrink: 0;
-  }
+      .ticker-item {
+        font-family: 'Arial', sans-serif;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #fff;
+        padding: 3px 10px;
+        margin-right: 60px;
+        flex-shrink: 0;
+      }
 
-  @keyframes ticker {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+      @keyframes ticker {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
 
-  /* ── Mobile nav overlay ── */
-  .hamburger {
-    display: none;
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    width: 44px;
-    height: 44px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 200;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 0;
-  }
-  .hamburger span {
-    display: block;
-    width: 26px;
-    height: 1.5px;
-    background: #fff;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    transform-origin: center;
-  }
-  .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
-  .nav-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: #000;
-    z-index: 150;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 60px clamp(32px, 10vw, 80px);
-  }
-  .nav-overlay.open { display: flex; }
-  .nav-overlay a {
-    color: #fff;
-    text-decoration: none;
-    font-family: 'Arial', sans-serif;
-    font-size: clamp(36px, 12vw, 64px);
-    font-weight: 400;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: 0.75;
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    width: 100%;
-    transition: opacity 0.2s;
-  }
-  .nav-overlay a:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
-  .nav-overlay a:hover, .nav-overlay a.active { opacity: 1; }
-  .nav-overlay .overlay-ig {
-    margin-top: 36px;
-    opacity: 0.5;
-    border: none !important;
-    width: auto !important;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 11px !important;
-    letter-spacing: 2px !important;
-  }
-  .nav-overlay .overlay-ig svg { width: 20px; height: 20px; }
-  @media (max-width: 680px) {
-    .bottom-bar { display: none; }
-    .ticker-wrap { bottom: 0; }
-    .hamburger { display: flex; }
-  }
-</style>
-</head>
-<body>
+      /* ── Mobile nav overlay ── */
+      .hamburger {
+        display: none;
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 44px;
+        height: 44px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 200;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 0;
+      }
+      .hamburger span {
+        display: block;
+        width: 26px;
+        height: 1.5px;
+        background: #fff;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        transform-origin: center;
+      }
+      .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+      .hamburger.open span:nth-child(2) { opacity: 0; }
+      .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+      .nav-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: #000;
+        z-index: 150;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 60px clamp(32px, 10vw, 80px);
+      }
+      .nav-overlay.open { display: flex; }
+      .nav-overlay a {
+        color: #fff;
+        text-decoration: none;
+        font-family: 'Arial', sans-serif;
+        font-size: clamp(36px, 12vw, 64px);
+        font-weight: 400;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        opacity: 0.75;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        width: 100%;
+        transition: opacity 0.2s;
+      }
+      .nav-overlay a:first-child { border-top: 1px solid rgba(255,255,255,0.08); }
+      .nav-overlay a:hover, .nav-overlay a.active { opacity: 1; }
+      .nav-overlay .overlay-ig {
+        margin-top: 36px;
+        opacity: 0.5;
+        border: none !important;
+        width: auto !important;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 11px !important;
+        letter-spacing: 2px !important;
+      }
+      .nav-overlay .overlay-ig svg { width: 20px; height: 20px; }
+      @media (max-width: 680px) {
+        .bottom-bar { display: none; }
+        .ticker-wrap { bottom: 0; }
+        .hamburger { display: flex; }
+      }
+    </style>
+  </head>
 
-<div class="top-bar">
-  <a href="icedxcoffee.html" class="back-link">
-    <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M9 2L4 7l5 5"/>
-    </svg>
-    Back
-  </a>
-  <span class="site-name">icedxcoffee</span>
-</div>
-
-<div class="content">
-  <h1>Music</h1>
-  <div class="rule"></div>
-
-  <div class="platforms">
-
-    <a href="https://open.spotify.com/album/4CHyuIrmY1SVJl23dhN8Yz?si=GXwF60JVQ9qS4_yt_oBNNg" target="_blank" class="platform-link">
-      <div class="platform-icon">
-        <svg viewBox="0 0 24 24" fill="#1DB954" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+  <body>
+    <div class="top-bar">
+      <a href="/" class="back-link">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 2L4 7l5 5"/>
         </svg>
-      </div>
-      <span class="platform-name">Spotify</span>
-      <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
-        <path d="M3 8h10M9 4l4 4-4 4"/>
-      </svg>
-    </a>
+        Back
+      </a>
+      <span class="site-name">icedxcoffee</span>
+    </div>
 
-    <a href="https://music.apple.com/search?term=icedxcoffee" target="_blank" class="platform-link">
-      <div class="platform-icon">
-        <svg viewBox="0 0 24 24" fill="#FC3C44" xmlns="http://www.w3.org/2000/svg">
-          <path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 0 0-1.877-.726 10.496 10.496 0 0 0-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208A4.93 4.93 0 0 0 .09 4.8a9.01 9.01 0 0 0-.09 1.125v12.099c.01.203.018.405.03.608.063 1.028.33 1.983.89 2.832.614.935 1.44 1.58 2.504 1.894.49.144.994.207 1.5.24.28.02.56.027.84.027h12.172c.217 0 .435-.003.65-.013.52-.02 1.036-.085 1.54-.245 1.077-.336 1.902-.985 2.523-1.932.546-.83.82-1.786.895-2.806l.024-.516V7.367l-.024-.5-.012-.493a9.23 9.23 0 0 0-.118-.75zM9.547 16.803V7.197L17.25 12l-7.703 4.803z"/>
+    <div class="content">
+      <h1>Music</h1>
+      <div class="rule"></div>
+
+      <div class="platforms">
+
+        <a href="https://open.spotify.com/album/4CHyuIrmY1SVJl23dhN8Yz?si=GXwF60JVQ9qS4_yt_oBNNg" target="_blank" class="platform-link">
+          <div class="platform-icon">
+            <svg viewBox="0 0 24 24" fill="#1DB954" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+            </svg>
+          </div>
+          <span class="platform-name">Spotify</span>
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+
+        <a href="https://music.apple.com/search?term=icedxcoffee" target="_blank" class="platform-link">
+          <div class="platform-icon">
+            <svg viewBox="0 0 24 24" fill="#FC3C44" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.994 6.124a9.23 9.23 0 0 0-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 0 0-1.877-.726 10.496 10.496 0 0 0-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208A4.93 4.93 0 0 0 .09 4.8a9.01 9.01 0 0 0-.09 1.125v12.099c.01.203.018.405.03.608.063 1.028.33 1.983.89 2.832.614.935 1.44 1.58 2.504 1.894.49.144.994.207 1.5.24.28.02.56.027.84.027h12.172c.217 0 .435-.003.65-.013.52-.02 1.036-.085 1.54-.245 1.077-.336 1.902-.985 2.523-1.932.546-.83.82-1.786.895-2.806l.024-.516V7.367l-.024-.5-.012-.493a9.23 9.23 0 0 0-.118-.75zM9.547 16.803V7.197L17.25 12l-7.703 4.803z"/>
+            </svg>
+          </div>
+          <span class="platform-name">Apple Music</span>
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+
+        <a href="https://music.amazon.com/search/icedxcoffee" target="_blank" class="platform-link">
+          <div class="platform-icon">
+            <svg viewBox="0 0 24 24" fill="#00A8E1" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.7-3.182v.686zm3.186 7.705c-.209.189-.512.201-.747.074-1.052-.872-1.238-1.276-1.814-2.106-1.734 1.769-2.962 2.299-5.209 2.299-2.66 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.891 5.942-1.099v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.819-1.775-.819-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.065-.333c-.259-.056-.548-.266-.472-.66C5.97 1.6 8.945.5 11.617.5c1.318 0 3.04.351 4.081 1.348 1.318 1.234 1.192 2.881 1.192 4.675v4.237c0 1.274.528 1.834 1.025 2.524.174.246.212.54-.01.723l-2.761 2.788z"/>
+            </svg>
+          </div>
+          <span class="platform-name">Amazon Music</span>
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+
+        <a href="https://www.youtube.com/results?search_query=icedxcoffee+music" target="_blank" class="platform-link">
+          <div class="platform-icon">
+            <svg viewBox="0 0 24 24" fill="#FF0000" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
+            </svg>
+          </div>
+          <span class="platform-name">YouTube Music</span>
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+
+        <a href="https://tidal.com/search?q=icedxcoffee" target="_blank" class="platform-link">
+          <div class="platform-icon">
+            <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.012 3.992L8.008 7.996 4.004 3.992 0 7.996l4.004 4.004 4.004-4.004 4.004 4.004 4.004-4.004L19.996 11.996 24 7.996l-4.004-4.004L16.016 7.996zM8.008 12.008l-4.004 4.004L8.008 20l4.004-3.988z"/>
+            </svg>
+          </div>
+          <span class="platform-name">Tidal</span>
+          <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+            <path d="M3 8h10M9 4l4 4-4 4"/>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="ticker-wrap">
+      <div class="ticker-track">
+        <span class="ticker-item">1brew Now Available for Streaming</span>
+        <span class="ticker-item">1brew Now Available for Streaming</span>
+        <span class="ticker-item">1brew Now Available for Streaming</span>
+        <span class="ticker-item">1brew Now Available for Streaming</span>
+        <span class="ticker-item">1brew Now Available for Streaming</span>
+        <span class="ticker-item">1brew Now Available for Streaming</span>
+        <span class="ticker-item">1brew Now Available for Streaming</span>
+        <span class="ticker-item">1brew Now Available for Streaming</span>
+        <span class="ticker-item">1brew Now Available for Streaming</span>
+        <span class="ticker-item">1brew Now Available for Streaming</span>
+        <span class="ticker-item">1brew Now Available for Streaming</span>
+        <span class="ticker-item">1brew Now Available for Streaming</span>
+      </div>
+    </div>
+
+    <div class="bottom-bar">
+      <a href="music.html" class="nav-link active">Music</a>
+      <a href="https://thethreadscollab.com/collections/icedxcoffee-all-products" target="_blank" class="nav-link">Merch</a>
+      <a href="media.html" class="nav-link">Media</a>
+      <a href="shows.html" class="nav-link">Shows</a>
+      <a href="https://www.instagram.com/icedxcoffee_band_official/" target="_blank" class="ig-link" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.8" fill="#fff" stroke="none"/>
         </svg>
-      </div>
-      <span class="platform-name">Apple Music</span>
-      <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
-        <path d="M3 8h10M9 4l4 4-4 4"/>
-      </svg>
-    </a>
+      </a>
+    </div>
 
-    <a href="https://music.amazon.com/search/icedxcoffee" target="_blank" class="platform-link">
-      <div class="platform-icon">
-        <svg viewBox="0 0 24 24" fill="#00A8E1" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.438-2.186 1.438-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.7-3.182v.686zm3.186 7.705c-.209.189-.512.201-.747.074-1.052-.872-1.238-1.276-1.814-2.106-1.734 1.769-2.962 2.299-5.209 2.299-2.66 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.891 5.942-1.099v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.819-1.775-.819-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.065-.333c-.259-.056-.548-.266-.472-.66C5.97 1.6 8.945.5 11.617.5c1.318 0 3.04.351 4.081 1.348 1.318 1.234 1.192 2.881 1.192 4.675v4.237c0 1.274.528 1.834 1.025 2.524.174.246.212.54-.01.723l-2.761 2.788z"/>
+    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-overlay" id="navOverlay">
+      <a href="music.html" class="active">Music</a>
+      <a href="https://thethreadscollab.com/collections/icedxcoffee-all-products" target="_blank">Merch</a>
+      <a href="media.html">Media</a>
+      <a href="shows.html">Shows</a>
+      <a href="https://www.instagram.com/icedxcoffee_band_official/" target="_blank" class="overlay-ig">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.8" fill="#fff" stroke="none"/>
         </svg>
-      </div>
-      <span class="platform-name">Amazon Music</span>
-      <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
-        <path d="M3 8h10M9 4l4 4-4 4"/>
-      </svg>
-    </a>
+        Instagram
+      </a>
+    </div>
 
-    <a href="https://www.youtube.com/results?search_query=icedxcoffee+music" target="_blank" class="platform-link">
-      <div class="platform-icon">
-        <svg viewBox="0 0 24 24" fill="#FF0000" xmlns="http://www.w3.org/2000/svg">
-          <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
-        </svg>
-      </div>
-      <span class="platform-name">YouTube Music</span>
-      <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
-        <path d="M3 8h10M9 4l4 4-4 4"/>
-      </svg>
-    </a>
-
-    <a href="https://tidal.com/search?q=icedxcoffee" target="_blank" class="platform-link">
-      <div class="platform-icon">
-        <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12.012 3.992L8.008 7.996 4.004 3.992 0 7.996l4.004 4.004 4.004-4.004 4.004 4.004 4.004-4.004L19.996 11.996 24 7.996l-4.004-4.004L16.016 7.996zM8.008 12.008l-4.004 4.004L8.008 20l4.004-3.988z"/>
-        </svg>
-      </div>
-      <span class="platform-name">Tidal</span>
-      <svg class="arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
-        <path d="M3 8h10M9 4l4 4-4 4"/>
-      </svg>
-    </a>
-
-  </div>
-</div>
-
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span class="ticker-item">1brew Now Available for Streaming</span>
-    <span class="ticker-item">1brew Now Available for Streaming</span>
-    <span class="ticker-item">1brew Now Available for Streaming</span>
-    <span class="ticker-item">1brew Now Available for Streaming</span>
-    <span class="ticker-item">1brew Now Available for Streaming</span>
-    <span class="ticker-item">1brew Now Available for Streaming</span>
-    <span class="ticker-item">1brew Now Available for Streaming</span>
-    <span class="ticker-item">1brew Now Available for Streaming</span>
-    <span class="ticker-item">1brew Now Available for Streaming</span>
-    <span class="ticker-item">1brew Now Available for Streaming</span>
-    <span class="ticker-item">1brew Now Available for Streaming</span>
-    <span class="ticker-item">1brew Now Available for Streaming</span>
-  </div>
-</div>
-
-<div class="bottom-bar">
-  <a href="music.html" class="nav-link active">Music</a>
-  <a href="https://thethreadscollab.com/collections/icedxcoffee-all-products" target="_blank" class="nav-link">Merch</a>
-  <a href="media.html" class="nav-link">Media</a>
-  <a href="shows.html" class="nav-link">Shows</a>
-  <a href="https://www.instagram.com/icedxcoffee_band_official/" target="_blank" class="ig-link" aria-label="Instagram">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-      <circle cx="12" cy="12" r="4"/>
-      <circle cx="17.5" cy="6.5" r="0.8" fill="#fff" stroke="none"/>
-    </svg>
-  </a>
-</div>
-
-
-<button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleNav()">
-  <span></span><span></span><span></span>
-</button>
-<div class="nav-overlay" id="navOverlay">
-  <a href="music.html" class="active">Music</a>
-  <a href="https://thethreadscollab.com/collections/icedxcoffee-all-products" target="_blank">Merch</a>
-  <a href="media.html">Media</a>
-  <a href="shows.html">Shows</a>
-  <a href="https://www.instagram.com/icedxcoffee_band_official/" target="_blank" class="overlay-ig">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-      <circle cx="12" cy="12" r="4"/>
-      <circle cx="17.5" cy="6.5" r="0.8" fill="#fff" stroke="none"/>
-    </svg>
-    Instagram
-  </a>
-</div>
-<script>
-  function toggleNav() {
-    document.getElementById('hamburger').classList.toggle('open');
-    document.getElementById('navOverlay').classList.toggle('open');
-    document.body.style.overflow = document.getElementById('navOverlay').classList.contains('open') ? 'hidden' : '';
-  }
-</script>
-</body>
+  </body>
+  
+  <script>
+    function toggleNav() {
+      document.getElementById('hamburger').classList.toggle('open');
+      document.getElementById('navOverlay').classList.toggle('open');
+      document.body.style.overflow = document.getElementById('navOverlay').classList.contains('open') ? 'hidden' : '';
+    }
+  </script>
 </html>
